@@ -178,8 +178,15 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.7;
     color: var(--text-dark);
-    background: var(--white);
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.65) 30%, rgba(255, 255, 255, 0.75) 70%, rgba(255, 255, 255, 0.80) 100%),
+        url('Shrey%20Mallick%20with%20Kids.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /* Decorative Elements */
@@ -191,8 +198,8 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 15% 25%, rgba(255, 153, 51, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 85% 75%, rgba(19, 136, 8, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 15% 25%, rgba(255, 153, 51, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(19, 136, 8, 0.02) 0%, transparent 50%);
     z-index: -1;
     pointer-events: none;
 }
@@ -499,6 +506,14 @@ body::before {
     letter-spacing: -1px;
 }
 
+/* Darker orange for About section title */
+.about .section-header h2 {
+    background: linear-gradient(135deg, #cc6600 0%, #b8590c 50%, #d4691a 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .section-line {
     width: 100px;
     height: 5px;
@@ -523,7 +538,7 @@ body::before {
 /* About Section */
 .about {
     padding: var(--section-padding);
-    background: var(--white);
+    background: transparent;
     position: relative;
 }
 
@@ -534,7 +549,7 @@ body::before {
     left: 0;
     width: 40%;
     height: 100%;
-    background: var(--cream);
+    background: rgba(254, 247, 240, 0.9);
     clip-path: polygon(0% 0%, 70% 0%, 50% 100%, 0% 100%);
     z-index: 1;
 }
@@ -644,7 +659,7 @@ body::before {
 /* Education Section */
 .education {
     padding: var(--section-padding);
-    background: var(--cream);
+    background: rgba(254, 247, 240, 0.85);
     position: relative;
 }
 
@@ -783,7 +798,7 @@ body::before {
 /* Gallery Section */
 .gallery {
     padding: var(--section-padding);
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 /* Special handling for images with multiple people */
@@ -895,12 +910,24 @@ body::before {
 }
 
 @media (max-width: 768px) {
+    body {
+        background: 
+            linear-gradient(135deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.45) 30%, rgba(255, 255, 255, 0.60) 70%, rgba(255, 255, 255, 0.65) 100%),
+            url('Shrey%20Mallick%20with%20Kids.jpg');
+        background-attachment: scroll; /* Better mobile performance */
+        background-position: center 20%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
         top: 80px;
         flex-direction: column;
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -969,10 +996,14 @@ body::before {
         min-width: 120px;
     }
 
+    .hero {
+        background: rgba(254, 247, 240, 0.75);
+    }
+    
     .hero::before {
         width: 100%;
         clip-path: none;
-        opacity: 0.03;
+        opacity: 0.02;
     }
 
     .hero-text h1 {
@@ -997,8 +1028,28 @@ body::before {
         margin-top: 1.5rem;
     }
 
+    .about {
+        background: rgba(255, 255, 255, 0.80);
+    }
+    
     .about::before {
         display: none;
+    }
+    
+    .education {
+        background: rgba(254, 247, 240, 0.75);
+    }
+    
+    .gallery {
+        background: rgba(255, 255, 255, 0.80);
+    }
+    
+    .news {
+        background: rgba(255, 255, 255, 0.80);
+    }
+    
+    .contact {
+        background: rgba(254, 247, 240, 0.80);
     }
 
     .about-stats {
@@ -1050,6 +1101,16 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    body {
+        background: 
+            linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.35) 30%, rgba(255, 255, 255, 0.55) 70%, rgba(255, 255, 255, 0.60) 100%),
+            url('Shrey%20Mallick%20with%20Kids.jpg');
+        background-size: cover;
+        background-position: center 15%;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+    }
+    
     .container {
         padding: 0 15px;
     }
@@ -1150,7 +1211,7 @@ body::before {
 /* News Section */
 .news {
     padding: var(--section-padding);
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .news-grid {
@@ -1215,7 +1276,7 @@ body::before {
 /* Contact Section */
 .contact {
     padding: var(--section-padding);
-    background: var(--cream);
+    background: rgba(254, 247, 240, 0.9);
 }
 
 .contact-content {
@@ -1557,6 +1618,54 @@ body::before {
         grid-row: 3;
     }
     
+    .hero {
+        background: rgba(254, 247, 240, 0.70);
+    }
+    
+    .about {
+        background: rgba(255, 255, 255, 0.75);
+    }
+    
+    .education {
+        background: rgba(254, 247, 240, 0.70);
+    }
+    
+    .gallery {
+        background: rgba(255, 255, 255, 0.75);
+    }
+    
+    .news {
+        background: rgba(255, 255, 255, 0.75);
+    }
+    
+    .contact {
+        background: rgba(254, 247, 240, 0.75);
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+    body {
+        background: 
+            linear-gradient(135deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.30) 30%, rgba(255, 255, 255, 0.50) 70%, rgba(255, 255, 255, 0.55) 100%),
+            url('Shrey%20Mallick%20with%20Kids.jpg');
+        background-position: center 10%;
+    }
+    
+    .hero {
+        background: rgba(254, 247, 240, 0.65);
+    }
+    
+    .about, .gallery, .news {
+        background: rgba(255, 255, 255, 0.70);
+    }
+    
+    .education, .contact {
+        background: rgba(254, 247, 240, 0.65);
+    }
+}
+
+@media (max-width: 480px) {
     .footer-section h4 {
         font-size: 1rem;
         margin-bottom: 0.8rem;
